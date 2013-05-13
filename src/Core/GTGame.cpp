@@ -51,7 +51,7 @@ namespace gt
 
 	GTGame::GTGame(GameWindow& mGameWindow, GTAssets& mAssets) : gameWindow(mGameWindow), assets(mAssets)
 	{
-		for(auto& t : assets.getAssetManager().getTextures()) t.second->setSmooth(true);
+		for(const auto& t : assets.getAssetManager().getTextures()) t.second->setSmooth(true);
 
 		gameState.onUpdate += [&](float mFrameTime){ update(mFrameTime); };
 		gameState.onDraw += [&]{ draw(); };
@@ -130,7 +130,7 @@ namespace gt
 	void GTGame::draw()
 	{
 		camera.apply();
-		for(auto& s : shapes) render(s.rectangleShape);
+		for(const auto& s : shapes) render(s.rectangleShape);
 		camera.unapply();
 	}
 	void GTGame::render(const Drawable& mDrawable) { gameWindow.draw(mDrawable); }
