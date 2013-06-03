@@ -17,7 +17,7 @@ using namespace ssvsc::Utils;
 
 namespace gt
 {
-	Color getRandomColor() { return Color{getRnd(0, 255), getRnd(0, 255), getRnd(0, 255), 255}; }
+	Color getRandomColor() { return Color(getRnd(0, 255), getRnd(0, 255), getRnd(0, 255), 255); }
 
 	GTShape::GTShape(Vector2f mMin, Vector2f mMax, Color mColor) : min{mMin}, max{mMax}, color{mColor}
 	{
@@ -32,16 +32,16 @@ namespace gt
 	{
 		if(opacity < 254) opacity += 2;
 		else opacity = 255;
-		rectangleShape.setFillColor(Color{color.r, color.g, color.b, opacity});
+		rectangleShape.setFillColor(Color(color.r, color.g, color.b, opacity));
 	}
 	GTShape GTShape::getSubShape(float mMinWidth, float mMinHeight, float mMaxWidth, float mMaxHeight, Color mColor)
 	{
-		float parentWidth{max.x - min.x};
+		//float parentWidth{max.x - min.x};
 		float width(getRnd(mMinWidth, mMaxWidth));
 		float xMin{min.x + getRnd(0, mMaxWidth - width)}, xMax{max.x - mMaxWidth};
 		float x(getRnd(xMin, xMax));
 
-		float parentHeight{max.y - min.y};
+		//float parentHeight{max.y - min.y};
 		float height(getRnd(mMinHeight, mMaxHeight));
 		float yMin{min.y + getRnd(0, mMaxHeight - height)}, yMax{max.y - mMaxHeight};
 		float y(getRnd(yMin, yMax));
@@ -95,8 +95,8 @@ namespace gt
 	void GTGame::initInput()
 	{
 		using k = Keyboard::Key;
-		using b = Mouse::Button;
-		using t = Input::Trigger::Types;
+		//using b = Mouse::Button;
+		//using t = Input::Trigger::Types;
 
 		gameState.addInput({{k::Escape}}, [&](float){ gameWindow.stop(); });
 		gameState.addInput({{k::R}}, [&](float){ restart(); });
