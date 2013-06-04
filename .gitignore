@@ -181,4 +181,5 @@ SSVOpenHexagon.txt
 *.exe
 *.ttf
 *.i
-*.a
+*.a/build/SSVPiet
+/build/SSVPiet
