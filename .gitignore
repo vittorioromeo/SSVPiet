@@ -183,3 +183,5 @@ SSVOpenHexagon.txt
 *.i
 *.a/build/SSVPiet
 /build/SSVPiet
+/CMakeLists.txt.user.0000000
+/CMakeLists.txt.user.7626ec3
