@@ -1,6 +1,9 @@
 callgrind.*
 CMakeLists.txt.user.*
 
+_RELEASE/
+build/
+
 /lib
 CMakeFiles/
 Makefile
