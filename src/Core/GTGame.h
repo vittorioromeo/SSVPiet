@@ -16,12 +16,12 @@ namespace gt
 
 	struct GTShape
 	{
-		sf::Vector2f min, max;
+		ssvs::Vec2f min, max;
 		sf::Color color;
 		sf::RectangleShape rectangleShape;
 		float opacity{0};
 
-		GTShape(sf::Vector2f mMin, sf::Vector2f mMax, sf::Color mColor);
+		GTShape(ssvs::Vec2f mMin, ssvs::Vec2f mMax, sf::Color mColor);
 
 		void update();
 		GTShape getSubShape(float mMinWidth, float mMinHeight, float mMaxWidth, float mMaxHeight, sf::Color mColor);
@@ -55,7 +55,7 @@ namespace gt
 			// Getters
 			ssvs::GameWindow& getGameWindow();
 			ssvs::GameState& getGameState();
-			sf::Vector2f getMousePosition();
+			ssvs::Vec2f getMousePosition();
 			float getRealFT();
 	};
 }

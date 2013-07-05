@@ -23,7 +23,7 @@ namespace gt
 {
 	Color getRandomColor() { return Color(getRnd(0, 255), getRnd(0, 255), getRnd(0, 255), 255); }
 
-	GTShape::GTShape(Vector2f mMin, Vector2f mMax, Color mColor) : min{mMin}, max{mMax}, color{mColor}
+	GTShape::GTShape(Vec2f mMin, Vec2f mMax, Color mColor) : min{mMin}, max{mMax}, color{mColor}
 	{
 		rectangleShape.setOrigin({0.f, 0.f});
 		rectangleShape.setPosition(min);
@@ -106,10 +106,10 @@ namespace gt
 		gameState.addInput({{k::R}}, [&](float){ restart(); });
 
 		float spd = 8.0f;
-		gameState.addInput({{k::A}}, [=](float){ camera.move(Vector2f{-spd, 0} * getRealFT()); });
-		gameState.addInput({{k::D}}, [=](float){ camera.move(Vector2f{spd, 0} * getRealFT()); });
-		gameState.addInput({{k::W}}, [=](float){ camera.move(Vector2f{0, -spd} * getRealFT()); });
-		gameState.addInput({{k::S}}, [=](float){ camera.move(Vector2f{0, spd} * getRealFT()); });
+		gameState.addInput({{k::A}}, [=](float){ camera.move(Vec2f{-spd, 0} * getRealFT()); });
+		gameState.addInput({{k::D}}, [=](float){ camera.move(Vec2f{spd, 0} * getRealFT()); });
+		gameState.addInput({{k::W}}, [=](float){ camera.move(Vec2f{0, -spd} * getRealFT()); });
+		gameState.addInput({{k::S}}, [=](float){ camera.move(Vec2f{0, spd} * getRealFT()); });
 		gameState.addInput({{k::Q}}, [=](float){ camera.zoom(1.f + 0.02f * getRealFT()); });
 		gameState.addInput({{k::E}}, [=](float){ camera.zoom(1.f - 0.02f * getRealFT()); });
 
@@ -142,7 +142,7 @@ namespace gt
 	// Getters
 	GameWindow& GTGame::getGameWindow()	{ return gameWindow; }
 	GameState& GTGame::getGameState()	{ return gameState; }
-	Vector2f GTGame::getMousePosition()	{ return camera.getMousePosition(); }
+	Vec2f GTGame::getMousePosition()	{ return camera.getMousePosition(); }
 	float GTGame::getRealFT()			{ return 60.f / gameWindow.getFPS(); }
 
 
