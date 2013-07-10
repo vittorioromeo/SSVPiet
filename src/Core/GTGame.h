@@ -37,6 +37,7 @@ namespace gt
 			std::vector<GTShape> shapes;
 			GTShape* currentCanvas{nullptr};
 			ssvu::Timeline shapeTimeline;
+			sf::Sprite logoSprite;
 
 			float timer{0};
 			float timerMax{300};

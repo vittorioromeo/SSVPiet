@@ -17,10 +17,10 @@ int main()
 	setRandomSeed();
 
 	unsigned int width{VideoMode::getDesktopMode().width}, height{VideoMode::getDesktopMode().height};
-	//width = 1440; height = 900;
+	width = 1440; height = 900;
 
 	GTAssets assets;
-	GameWindow gameWindow{"SSVPiet", createStaticTimer(gameWindow, 1.0f, 0.5f, 800), width, height, 1, false};
+	GameWindow gameWindow{"Generazione algortitmica di arte moderna", createStaticTimer(gameWindow, 1.0f, 0.5f, 800), width, height, 1, false};
 	GTGame game{gameWindow, assets};
 
 	gameWindow.setGameState(game.getGameState());

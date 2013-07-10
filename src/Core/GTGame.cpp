@@ -57,6 +57,10 @@ namespace gt
 	{
 		for(const auto& t : assets.getAssetManager().getTextures()) t.second->setSmooth(true);
 
+		logoSprite.setTexture(assets.getAssetManager().getTexture("logo.png"));
+		logoSprite.setScale(0.35f, 0.35f);
+		logoSprite.setPosition(getGameWindow().getWidth() - logoSprite.getGlobalBounds().width, getGameWindow().getHeight() - logoSprite.getGlobalBounds().height);
+
 		gameState.onUpdate += [&](float mFrameTime){ update(mFrameTime); };
 		gameState.onDraw += [&]{ draw(); };
 
@@ -136,6 +140,7 @@ namespace gt
 		camera.apply();
 		for(const auto& s : shapes) render(s.rectangleShape);
 		camera.unapply();
+		render(logoSprite);
 	}
 	void GTGame::render(const Drawable& mDrawable) { gameWindow.draw(mDrawable); }
 
